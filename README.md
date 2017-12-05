@@ -8,7 +8,8 @@ Resaltado de sintaxis para Informix 4GL
 
 Ejemplo de la Sintaxis:
 
-![Sintaxis](./img/4gl.png)
+![Sintaxis](https://github.com/INGCRENGIFO/VsCodeInformix4GL/blob/master/images/4gl.png?raw=true)
+
 
 > Resaltado Final.
 

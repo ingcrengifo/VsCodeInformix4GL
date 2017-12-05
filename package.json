@@ -2,9 +2,18 @@
     "name": "informix4gl",
     "displayName": "Informix 4GL",
     "description": "Sintaxis para Informix 4GL en Vs Code",
+    "icon": "images/logo.jpg",
     "version": "0.0.1",
-    "publisher": "Cristian Rengifo",
-    "icon": "./img/4gl4.jpg",
+    "publisher": "CristianRengifo",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/INGCRENGIFO/VsCodeInformix4GL"
+    },
+    "keywords": [
+        "Informix",
+        "Informix 4GL",
+        "4GL"
+    ],
     "engines": {
         "vscode": "^1.18.0"
     },
