@@ -3,7 +3,7 @@
     "displayName": "Informix 4GL",
     "description": "Sintaxis para Informix 4GL en Vs Code",
     "icon": "images/logo.jpg",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "CristianRengifo",
     "repository": {
         "type": "git",
