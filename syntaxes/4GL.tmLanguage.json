@@ -1,0 +1,103 @@
+{
+  "$schema":
+    "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Informix 4GL",
+  "patterns": [
+    {
+      "begin": "\\{",
+      "end": "\\}",
+      "name": "comment.block",
+      "patterns": [
+        {
+          "match": "."
+        }
+      ]
+    },
+    {
+      "comment": "Comentario iniciando con #",
+      "match": "#.*$",
+      "name": "comment.line.number-sign"
+    },
+    {
+      "comment": "Single quoted string",
+      "match": "('(?:\\\\'|.)*?')",
+      "name": "string.single"
+    },
+    {
+      "comment": "Double quoted string",
+      "match": "(\\\"(?:\\\\\"|.)*?\\\")",
+      "name": "string.double"
+    },
+    {
+      "comment": "Operadores",
+      "match":
+        "\b(ANY|AT|BEFORE|WITH|WITHOUT|LIKE|WHEN|WHENEVER|WHERE|PREVIOUS|TO|THEN|THROUGH|THRU|UNITS|OTHERWISE|OF|NO|NOT|FIRST|FROM|FORMONLY|IS|LAST|INFIELD|AND|OR)\b",
+      "name": "keyword.operator"
+    },
+    {
+      "comment": "Constantes del lenguaje",
+      "match": "(?i)(dirty read|null|true|false|notfound)",
+      "name": "constant.language"
+    },
+    {
+      "comment": "Variables del Lenguaje",
+      "match": "(?i)(isolation|today|\\sstatus|pageno)",
+      "name": "variable.language"
+    },
+    {
+      "comment": "Control",
+      "match":
+        "(?i)((\\s|^)case(\\s*|$)|continue (.*)|when |otherwise|end case|while |end while|(\\s|^)for(\\s|$)|foreach | into |end for(each)?|(\\s|^)if(?=\\s+|$)|(\\s+|^)then(\\s+|$)|(\\s+|^)else(\\s+|$)|end if|return(\\s+|$)|exit (.*))",
+      "name": "keyword.control"
+    },
+    {
+      "comment": "Keywords",
+      "match":
+        "(?i)( between |call(?=\\s+|$)| clipped|(\\s|^)close\\s+(form|window)*|(\\s|^)create\\s+(temp\\s+)?(table|index)(?=\\s+|$)|database |\\sreturning |declare |delete(?=\\s|$)|display\\s+|((\\s|^)drop\\s+(table|index)(\\s|$))|((\\s|^)fetch((\\s+|$)|(\\s+(first|last)\\s+)))|(\\s|^)from(\\s+|$)|(\\s+|^)free\\s+|group by\\s|(\\s+|^)(desc|asc)(\\s+|$)|(\\s|^)insert\\s+into(\\s+|$)|((scroll)* cursor(?=\\s)(\\swith hold)*)|((top|right|bottom|left)\\s+margin)|page length|(\\s|^)open\\s+(form|window)*|(\\s|^)prepare |(^|\\s)prompt\\s|(^|\\s)input by name(\\s|$)|((start|finish)\\s+report)|(\\s|^)select(\\s+|$)| spaces|(\\s|^)update(\\s+|$)|(\\s|^)where(\\s+|$)|(\\s|^)output(?=\\s|$)|(?<=\\s)to(?=\\s|$)|order by|format( |$)|(first\\s+)*page header|before group of|on (every|last) row|after group of| using |begin\\s+work|commit\\s+work|rollback\\s+work|(\\s+|^)values(\\s+|$)|((\\s|^)whenever\\s+(any\\s+)?error\\s+(continue|stop)(\\s|$))|(\\s|^)run\\s+|end input)",
+      "name": "keyword.other"
+    },
+    {
+      "comment": "Constante Numerica",
+      "match": "(?<!\\w)((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))",
+      "name": "constant.numeric"
+    },
+    {
+      "captures": {
+        "1": {"name" :"storage.type"},
+        "2": {"name" :"entity.name"},
+        "3": {"name" :"variable.parameter"}
+      },
+      "comment": "Definicion de Funciones",
+      "match": "(?i)(?<!\\w\\s)(function|report)\\s+(.*)\\s*\\((.*)\\)",
+      "name": "meta.function"
+    },
+    {
+      "captures": {
+        "1":{
+          "name":"storage.type"
+        }
+      },
+      "comment": "Definicion de la Funcion Main",
+      "match": "(?i)(main)(\\s*|$)",
+      "name": "meta.function"
+    },
+    {
+      "comment": "Definicion de Funciones",
+      "match": "(?i)(end function|end main|end report)(\\s*|$)",
+      "name": "storage.type"
+    },
+    {
+      "comment": "Tipos de Almacenamiento",
+      "match":
+        "(?i)(\\schar(?=[\\s\\(,$]))|(\\sdate(\\s+|$)|decimal|define | smallint| integer| float|let | like |(end)* record|(((^|\\s+)|(end\\s+))globals))",
+      "name": "storage.type"
+    },
+    {
+      "comment": "Algunas Funciones",
+      "match":
+        "(?i)((?<=\\s)(length|day|month|year|p_open|p_close)(?=\\s*\\(.*?\\)))",
+      "name": "support.function"
+    }
+  ],
+  "scopeName": "source.4GL"
+}

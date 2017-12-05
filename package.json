@@ -1,0 +1,27 @@
+{
+    "name": "informix4gl",
+    "displayName": "Informix 4GL",
+    "description": "Sintaxis para Informix 4GL en Vs Code",
+    "version": "0.0.1",
+    "publisher": "Cristian Rengifo",
+    "icon": "./img/4gl4.jpg",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "4GL",
+            "aliases": ["Informix 4GL", "4GL"],
+            "extensions": [".4gl",".per"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "4GL",
+            "scopeName": "source.4GL",
+            "path": "./syntaxes/4GL.tmLanguage.json"
+        }]
+    }
+}
