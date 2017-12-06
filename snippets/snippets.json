@@ -1,0 +1,65 @@
+{
+    "Select": {
+        "prefix": "select",
+        "body": [
+            "SELECT ${1:campos}",
+            "FROM ${2:tabla}",
+            "WHERE ${3:condicion}"
+        ]
+    },
+    "update": {
+        "prefix": "update",
+        "body": [
+            "UPDATE ${1:tabla}",
+            "SET ${2:campos}",
+            "WHERE ${3:condicion}"
+        ]
+    },
+    "If": {
+        "prefix": "if",
+        "body": [
+            "IF ${1:var1} = ${2:var2} THEN",
+            "\t$0",
+            "END IF"
+        ]
+    },
+    "For": {
+        "prefix": "for",
+        "body": [
+            "FOR i = ${1:1} TO ${2:cantidad}",
+            "\t$0",
+            "END FOR"
+        ]
+    },
+    "Foreach": {
+        "prefix": "foreach",
+        "body":[
+            "FOREACH ${1:cursor} INTO ${2:variable}",
+            "\t$0",
+            "END FOREACH"
+        ]
+    },
+    "Cursor For Select": {
+        "prefix": "cursor",
+        "body":[
+            "DECLARE ${1:cursor} CURSOR FOR",
+            "SELECT ${2:campos}",
+            "FROM ${3:tabla}",
+            "",
+            "FOREACH ${1:cursor} INTO ${4:variable}",
+            "\t$0",
+            "END FOREACH"
+        ]
+    },
+    "Funcion": {
+        "prefix": "function",
+        "body":[
+            "FUNCTION ${1:nombre}(${2:variables})",
+            "",
+            "DEFINE",
+            "\t$0",
+            "",
+            "END FUNCTION"
+        ]
+    }
+}
