@@ -41,6 +41,9 @@ Escriba parte de un snippet, presione `enter`, y el snippet se desplegará.
 | `foreach`                    | Genera la estructura para un Foreach |
 | `cursor`                     | Genera la Estructura para un Cursor con un Select y su iteracion con un Foreach |
 | `function`                   | Genera la estructura para una Funcion |
+| `report`                     | Genera la estructura para un Reporte |
+| `call`                       | Genera la estructura para un llamado a una funcion |
+| `message`                     | Genera la estructura para un mensaje |
 
 
 Alternativamente, presione `Ctrl` +` Space` (Windows, Linux) o `Cmd` +` Space` (OSX) para activar los snippets desde el editor.

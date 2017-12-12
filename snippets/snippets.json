@@ -5,7 +5,8 @@
             "SELECT ${1:campos}",
             "FROM ${2:tabla}",
             "WHERE ${3:condicion}"
-        ]
+        ],
+        "description": "Select con where"
     },
     "update": {
         "prefix": "update",
@@ -13,7 +14,8 @@
             "UPDATE ${1:tabla}",
             "SET ${2:campos}",
             "WHERE ${3:condicion}"
-        ]
+        ],
+        "description": "Update con Where"
     },
     "If": {
         "prefix": "if",
@@ -21,7 +23,8 @@
             "IF ${1:var1} = ${2:var2} THEN",
             "\t$0",
             "END IF"
-        ]
+        ],
+        "description": "Condicional If"
     },
     "For": {
         "prefix": "for",
@@ -29,7 +32,8 @@
             "FOR i = ${1:1} TO ${2:cantidad}",
             "\t$0",
             "END FOR"
-        ]
+        ],
+        "description": "Iteracion con For"
     },
     "Foreach": {
         "prefix": "foreach",
@@ -37,7 +41,8 @@
             "FOREACH ${1:cursor} INTO ${2:variable}",
             "\t$0",
             "END FOREACH"
-        ]
+        ],
+        "description": "Iteracion con Foreach"
     },
     "Cursor For Select": {
         "prefix": "cursor",
@@ -49,7 +54,8 @@
             "FOREACH ${1:cursor} INTO ${4:variable}",
             "\t$0",
             "END FOREACH"
-        ]
+        ],
+        "description": "Cursor con Select y Foreach"
     },
     "Funcion": {
         "prefix": "function",
@@ -60,6 +66,48 @@
             "\t$0",
             "",
             "END FUNCTION"
-        ]
+        ],
+        "description": "Nueva Funcion"
+    },
+    "Report": {
+        "prefix": "report",
+        "body": [
+            "REPORT ${1:nombre}(${2:variables})",
+            "",
+            "DEFINE",
+            "   ${3:var1}                  ${4:tipo},",
+            "   ${5:var1}                  ${6:tipo},",
+            "   ${7:var1}                  ${8:tipo}",
+            "",
+            "OUTPUT",
+            "PAGE LENGTH ${9:length}",
+            "",
+            "FORMAT",
+            "PAGE HEADER | FIRST PAGE HEADER",
+            "PRINT \"=================================================================\"",
+            "\"==========================================\"",
+            "PRINT \"=================================================================\"",
+            "\"==========================================\" ",
+            "ON EVERY ROW",
+            "\t$10",
+            "ON LAST ROW",
+            "\t$11",
+            "END REPORT"
+        ],
+        "description":"Nuevo Reporte"
+    },
+    "Call": {
+        "prefix": "call",
+        "body": [
+            "CALL ${1:funcion}(${2:variables})"
+        ],
+        "descripcion": "LLamar una Funcion"
+    },
+    "Message": {
+        "prefix": "message",
+        "body": [
+            "MESSAGE \"${1:mensaje}\" ATTRIBUTE(BLINK,BOLD)"
+        ],
+        "description": "Mensaje"
     }
 }

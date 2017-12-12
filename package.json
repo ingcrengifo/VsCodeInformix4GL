@@ -38,6 +38,11 @@
                 "language": "4GL",
                 "path": "./snippets/snippets.json"
             }
-        ]
+        ],
+        "configurationDefaults": {
+            "[4GL]": {
+                "files.encoding": "cp437"
+            }
+        }
     }
 }

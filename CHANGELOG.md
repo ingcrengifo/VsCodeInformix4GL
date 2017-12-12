@@ -7,6 +7,11 @@ Cambios y Actualizaciones.
 - Mas resaltadores de sintaxis
 - Mas Snippets
 
+## [0.0.4] - 2017-12-12
+### Agregado
+- Se agregan snippets function,report,call,message
+- Se implementa la codificacion CP437 por default (Usada por IBM Informix 4GL)
+
 ## [0.0.3] - 2017-12-06
 ### Agregado
 - Se agregan snippets
