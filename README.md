@@ -43,7 +43,8 @@ Escriba parte de un snippet, presione `enter`, y el snippet se desplegará.
 | `function`                   | Genera la estructura para una Funcion |
 | `report`                     | Genera la estructura para un Reporte |
 | `call`                       | Genera la estructura para un llamado a una funcion |
-| `message`                     | Genera la estructura para un mensaje |
+| `message`                    | Genera la estructura para un mensaje |
+| `case`                       | Genera la estructura para un case |
 
 
 Alternativamente, presione `Ctrl` +` Space` (Windows, Linux) o `Cmd` +` Space` (OSX) para activar los snippets desde el editor.

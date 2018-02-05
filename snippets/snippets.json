@@ -60,12 +60,32 @@
     "Funcion": {
         "prefix": "function",
         "body":[
-            "FUNCTION ${1:nombre}(${2:variables})",
+            "##############################################################################",
+            "--              ${1:Nombre de la Funcion}",
+            "--              ${2:Descripcion}",
+            "--              ${3:Autor}",
+            "--              ${4:Fecha}",
+            "--              Parametros:",
+            "--                      ${5:Parametros}",
+            "--              Parametros:",
+            "--                      ${6:Parametros}",
+            "##############################################################################",
+            "FUNCTION ${1:function_name}(${7:parameters})",
             "",
             "DEFINE",
-            "\t$0",
+            "   lc_fun     CHAR(30),",
+            "   ll_kod     SMALLINT,",
+            "   lc_error   CHAR(255)",
+            "   ${8:more variables}",
             "",
-            "END FUNCTION"
+            "    INITIALIZE",
+            "        lc_fun, ll_kod, lc_error, ${9:inicializa variables}",
+            "    TO NULL",
+            "",
+            "    ${10:code}",
+            "",
+            "    RETURN lc_fun",
+            "END FUNCTION     ###     $1()"
         ],
         "description": "Nueva Funcion"
     },
@@ -109,5 +129,26 @@
             "MESSAGE \"${1:mensaje}\" ATTRIBUTE(BLINK,BOLD)"
         ],
         "description": "Mensaje"
+    },
+    "Case": {
+        "prefix": "case",
+        "body": [
+            "CASE ${1:variable} ",
+            "   WHEN ${2:value}",
+            "       ${3:code}${4:",
+            "   WHEN ${5:value}",
+            "       ${6:code}}${7:",
+            "   OTHERWISE",
+            "       ${8:code}}",
+            "END CASE"
+        ],
+        "description": "Case"
+    },
+    "Char": {
+        "prefix": "char",
+        "body":[
+            "CHAR($1)$0"
+        ],
+        "description": "char"
     }
 }

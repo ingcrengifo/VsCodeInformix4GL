@@ -7,6 +7,11 @@ Cambios y Actualizaciones.
 - Mas resaltadores de sintaxis
 - Mas Snippets
 
+## [0.0.5] - 2018-02-05
+### Agregado
+- Se agregan snippets case y se modifica function
+- Se hacen correcciones en la sintaxis
+
 ## [0.0.4] - 2017-12-12
 ### Agregado
 - Se agregan snippets function,report,call,message

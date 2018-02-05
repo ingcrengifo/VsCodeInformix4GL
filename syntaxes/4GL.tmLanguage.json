@@ -6,7 +6,7 @@
     {
       "begin": "\\{",
       "end": "\\}",
-      "name": "comment.block",
+      "name": "comment.block.4GL",
       "patterns": [
         {
           "match": "."
@@ -16,92 +16,83 @@
     {
       "comment": "Comentario iniciando con #",
       "match": "#.*$",
-      "name": "comment.line.number-sign"
+      "name": "comment.line.number-sign.4GL"
     },
     {
       "comment": "Comentario iniciando con --",
       "match": "--.*$",
-      "name": "comment.line"
+      "name": "comment.line.4GL"
     },
     {
       "comment": "Single quoted string",
       "match": "('(?:\\\\'|.)*?')",
-      "name": "string.single"
+      "name": "string.single.4GL"
     },
     {
       "comment": "Double quoted string",
       "match": "(\\\"(?:\\\\\"|.)*?\\\")",
-      "name": "string.double"
+      "name": "string.double.4GL"
     },
     {
       "comment": "Operadores",
       "match":
-        "\b(ANY|AT|BEFORE|WITH|WITHOUT|LIKE|WHEN|WHENEVER|WHERE|PREVIOUS|TO|THEN|THROUGH|THRU|UNITS|OTHERWISE|OF|NO|NOT|FIRST|FROM|FORMONLY|IS|LAST|INFIELD|AND|OR)\b",
-      "name": "keyword.operator"
+        "(?i)(=|!=|\\+|-|/|<|>|,|(\\s(or|is|mod|not)(?=(\\s|$))))",
+      "name": "keyword.operator.4GL"
     },
     {
-      "comment": "Constantes del lenguaje",
+      "comment": "Constantes del Lenguaje",
       "match": "(?i)(dirty read|null|true|false|notfound)",
-      "name": "constant.language"
+      "name": "constant.language.4GL"
+    },
+    {
+      "comment": "Constantes Numericas",
+      "match": "(?<!\\w)((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))",
+      "name": "constant.numeric.4GL"
     },
     {
       "comment": "Variables del Lenguaje",
       "match": "(?i)(isolation|today|\\sstatus|pageno)",
-      "name": "variable.language"
+      "name": "variable.language.4GL"
     },
     {
-      "comment": "Control",
-      "match":
-        "(?i)((\\s|^)case(\\s*|$)|continue (.*)|when |otherwise|end case|while |end while|(\\s|^)for(\\s|$)|foreach | into |end for(each)?|(\\s|^)if(?=\\s+|$)|(\\s+|^)then(\\s+|$)|(\\s+|^)else(\\s+|$)|end if|return(\\s+|$)|exit (.*))",
-      "name": "keyword.control"
+      "comment": "Controles",
+      "match": "\\b(?i)(DEFER|QUIT|INTERRUPT|HIDE|OPTION|OPTIONS|ALL|NEXT|SHOW|MESSAGE|LINE|(\\s|^)case(\\s*|$)|continue (.*)|when |otherwise|end case|while |end while|(\\s|^)for(\\s|$)|foreach | into |end for(each)?|if|(\\s+|^)then(\\s+|$)|(\\s+|^)else(\\s+|$)|end if|return(\\s+|$)|exit (.*)|END|INPUT)\\b",
+      "name": "keyword.control.4GL"
     },
     {
-      "comment": "Keywords",
-      "match":
-        "(?i)( between |call(?=\\s+|$)| clipped|(\\s|^)close\\s+(form|window)*|(\\s|^)create\\s+(temp\\s+)?(table|index)(?=\\s+|$)|database |\\sreturning |declare |delete(?=\\s|$)|display\\s+|((\\s|^)drop\\s+(table|index)(\\s|$))|((\\s|^)fetch((\\s+|$)|(\\s+(first|last)\\s+)))|(\\s|^)from(\\s+|$)|(\\s+|^)free\\s+|group by\\s|(\\s+|^)(desc|asc)(\\s+|$)|(\\s|^)insert\\s+into(\\s+|$)|((scroll)* cursor(?=\\s)(\\swith hold)*)|((top|right|bottom|left)\\s+margin)|page length|(\\s|^)open\\s+(form|window)*|(\\s|^)prepare |(^|\\s)prompt\\s|(^|\\s)input by name(\\s|$)|((start|finish)\\s+report)|(\\s|^)select(\\s+|$)| spaces|(\\s|^)update(\\s+|$)|(\\s|^)where(\\s+|$)|(\\s|^)and(\\s+|$)|(\\s|^)output(?=\\s|$)|(?<=\\s)to(?=\\s|$)|order by|format( |$)|(first\\s+)*page header|before group of|on (every|last) row|after group of| using |begin\\s+work|commit\\s+work|rollback\\s+work|(\\s+|^)values(\\s+|$)|((\\s|^)whenever\\s+(any\\s+)?error\\s+(continue|stop)(\\s|$))|(\\s|^)run\\s+|end input)",
-      "name": "keyword.other"
+      "comment": "Funciones del Sistema",
+      "match": "\\b(ARG_VAL|ARR_COUNT|ARR_CURR|CURSOR_NAME|DOWNSHIFT|ERR_GET|ERR_PRINT|ERR_QUIT|ERRORLOG|FGL_DRAWBOX|FGL_DYNARR_EXTENTSIZE|FGL_GETENV|FGL_GETKEY|FGL_ISDYNARR_ALLOCATED|FGL_KEYVAL|FGL_LASTKEY|FGL_SCR_SIZE|FGL_SETCURRLINE|LENGTH|NUM_ARGS|ORD|SCR_LINE|SET_COUNT|SHOWHELP|STARTLOG|UPSHIFT|MDY|LOAD|UNLOAD|GET_FLDBUF)\\b",
+      "name":"keyword.other"
     },
     {
-      "comment": "Constante Numerica",
-      "match": "(?<!\\w)((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))",
-      "name": "constant.numeric"
+      "comment": "Palabras Clave",
+      "match": "(?i)( between |call(?=\\s+|$)| clipped|(\\s|^)close\\s+(form|window)*|(\\s|^)create\\s+(temp\\s+)?(table|index)(?=\\s+|$)|database |\\sreturning |declare |delete(?=\\s|$)|display\\s+|((\\s|^)drop\\s+(table|index)(\\s|$))|((\\s|^)fetch((\\s+|$)|(\\s+(first|last)\\s+)))|(\\s+|^)free\\s+|group by\\s|(\\s+|^)(desc|asc)(\\s+|$)|(\\s|^)insert\\s+into(\\s+|$)|((scroll)* cursor(?=\\s)(\\swith hold)*)|((top|right|bottom|left)\\s+margin)|page length|(\\s|^)open\\s+(form|window)*|(\\s|^)prepare |(^|\\s)prompt\\s|(^|\\s)input by name(\\s|$)|((start|finish)\\s+report)| spaces|(\\s|^)update(\\s+|$)|(\\s|^)output(?=\\s|$)|(?<=\\s)to(?=\\s|$)|order by|format( |$)|(first\\s+)*page header|before group of|on (every|last) row|after group of| using |begin\\s+work|commit\\s+work|rollback\\s+work|(\\s+|^)values(\\s+|$)|((\\s|^)whenever\\s+(any\\s+)?error\\s+(continue|stop)(\\s|$))|(\\s|^)run\\s+|end input)",
+      "name": "keyword.other.4GL"
     },
     {
-      "captures": {
-        "1": {"name" :"storage.type"},
-        "2": {"name" :"entity.name"},
-        "3": {"name" :"variable.parameter"}
-      },
-      "comment": "Definicion de Funciones",
-      "match": "(?i)(?<!\\w\\s)(function|report)\\s+(.*)\\s*\\((.*)\\)",
-      "name": "meta.function"
+      "comment": "Otras Palabras Clave",
+      "match": "\\b(?i)(attribute|clear|form|column|columns|defaults|menu|key|main|set|lock|mode|wait|initialize|COMMAND|WITH|NO|LOG|ON|FUNCTION|REPORT|INFIELD|FIELD)\\b",
+      "name": "keyword.other.4GL"
     },
     {
-      "captures": {
-        "1":{
-          "name":"storage.type"
-        }
-      },
-      "comment": "Definicion de la Funcion Main",
-      "match": "(?i)(main)(\\s*|$)",
-      "name": "meta.function"
+      "comment": "SQL",
+      "match": "\\b(?i)(SELECT|FROM|WHERE|AND|ALTER|ASC|ASCENDING|COUNT|DROP|DESC|DESCENDING|ORDER|UPDATE|UNION|UNIQUE|OUTER|DELETE|MAX|MATCHES|EXISTS|GROUP|HAVING|INSERT|INTO|VALUES|CREATE|VALUE|IN|BY|SQLAWARN|SQLERRM|SQLERROR|SQLERRP|SQLSTATE|SQLWARNING)\\b",
+      "name":"keyword.other"
     },
     {
       "comment": "Definicion de Funciones",
-      "match": "(?i)(end function|end main|end report)(\\s*|$)",
-      "name": "storage.type"
+      "match": "\\b(?i)(end function|end main|end report)\\b",
+      "name":"storage.type"
     },
     {
       "comment": "Tipos de Almacenamiento",
-      "match":
-        "(?i)(\\schar(?=[\\s\\(,$]))|(\\sdate(\\s+|$)|decimal|define | smallint| integer| float|let | like |(end)* record|(((^|\\s+)|(end\\s+))globals))",
-      "name": "storage.type"
+      "match": "\\b(?i)(array|char|date|decimal|define|smallint|integer| float|let |like|record|(end)* record|(((^|\\s+)|(end\\s+))globals))\\b",
+      "name":"storage.type.4GL"
     },
     {
-      "comment": "Algunas Funciones",
-      "match":
-        "(?i)((?<=\\s)(length|day|month|year|p_open|p_close)(?=\\s*\\(.*?\\)))",
-      "name": "support.function"
+      "comment": "Funciones Extras",
+      "match": "(?i)((?<=\\s)(length|day|month|year|p_open|p_close)(?=\\s*\\(.*?\\)))",
+      "name":"support.function.4GL"
     }
   ],
   "scopeName": "source.4GL"
