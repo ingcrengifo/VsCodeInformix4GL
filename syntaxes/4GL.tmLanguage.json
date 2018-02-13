@@ -56,7 +56,7 @@
     },
     {
       "comment": "Controles",
-      "match": "\\b(?i)(DEFER|QUIT|INTERRUPT|HIDE|OPTION|OPTIONS|ALL|NEXT|SHOW|MESSAGE|LINE|(\\s|^)case(\\s*|$)|continue (.*)|when |otherwise|end case|while |end while|(\\s|^)for(\\s|$)|foreach | into |end for(each)?|if|(\\s+|^)then(\\s+|$)|(\\s+|^)else(\\s+|$)|end if|return(\\s+|$)|exit (.*)|END|INPUT)\\b",
+      "match": "\\b(?i)(DEFER|QUIT|INTERRUPT|HIDE|OPTION|OPTIONS|ALL|NEXT|SHOW|MESSAGE|LINE|(\\s|^)case(\\s*|$)|continue (.*)|when |otherwise|end case|while |end while|(\\s|^)for(\\s|$)|foreach | into |end for(each)?|if|then|(\\s+|^)else(\\s+|$)|end if|return(\\s+|$)|exit (.*)|END|INPUT)\\b",
       "name": "keyword.control.4GL"
     },
     {
@@ -66,7 +66,7 @@
     },
     {
       "comment": "Palabras Clave",
-      "match": "(?i)( between |call(?=\\s+|$)| clipped|(\\s|^)close\\s+(form|window)*|(\\s|^)create\\s+(temp\\s+)?(table|index)(?=\\s+|$)|database |\\sreturning |declare |delete(?=\\s|$)|display\\s+|((\\s|^)drop\\s+(table|index)(\\s|$))|((\\s|^)fetch((\\s+|$)|(\\s+(first|last)\\s+)))|(\\s+|^)free\\s+|group by\\s|(\\s+|^)(desc|asc)(\\s+|$)|(\\s|^)insert\\s+into(\\s+|$)|((scroll)* cursor(?=\\s)(\\swith hold)*)|((top|right|bottom|left)\\s+margin)|page length|(\\s|^)open\\s+(form|window)*|(\\s|^)prepare |(^|\\s)prompt\\s|(^|\\s)input by name(\\s|$)|((start|finish)\\s+report)| spaces|(\\s|^)update(\\s+|$)|(\\s|^)output(?=\\s|$)|(?<=\\s)to(?=\\s|$)|order by|format( |$)|(first\\s+)*page header|before group of|on (every|last) row|after group of| using |begin\\s+work|commit\\s+work|rollback\\s+work|(\\s+|^)values(\\s+|$)|((\\s|^)whenever\\s+(any\\s+)?error\\s+(continue|stop)(\\s|$))|(\\s|^)run\\s+|end input)",
+      "match": "\\b(?i)( between |call(?=\\s+|$)| clipped|(\\s|^)close\\s+(form|window)*|(\\s|^)create\\s+(temp\\s+)?(table|index)(?=\\s+|$)|database |\\sreturning |declare |delete(?=\\s|$)|display\\s+|((\\s|^)drop\\s+(table|index)(\\s|$))|((\\s|^)fetch((\\s+|$)|(\\s+(first|last)\\s+)))|(\\s+|^)free\\s+|group by\\s|(\\s+|^)(desc|asc)(\\s+|$)|(\\s|^)insert\\s+into(\\s+|$)|((scroll)* cursor(?=\\s)(\\swith hold)*)|((top|right|bottom|left)\\s+margin)|page length|(\\s|^)open\\s+(form|window)*|(\\s|^)prepare |(^|\\s)prompt\\s|(^|\\s)input by name(\\s|$)|((start|finish)\\s+report)| spaces|(\\s|^)update(\\s+|$)|(\\s|^)output(?=\\s|$)|(?<=\\s)to(?=\\s|$)|order by|format( |$)|(first\\s+)*page header|before group of|on (every|last) row|after group of| using |begin\\s+work|commit\\s+work|rollback\\s+work|(\\s+|^)values(\\s+|$)|((\\s|^)whenever\\s+(any\\s+)?error\\s+(continue|stop)(\\s|$))|(\\s|^)run\\s+|end input)",
       "name": "keyword.other.4GL"
     },
     {
@@ -78,6 +78,11 @@
       "comment": "SQL",
       "match": "\\b(?i)(SELECT|FROM|WHERE|AND|ALTER|ASC|ASCENDING|COUNT|DROP|DESC|DESCENDING|ORDER|UPDATE|UNION|UNIQUE|OUTER|DELETE|MAX|MATCHES|EXISTS|GROUP|HAVING|INSERT|INTO|VALUES|CREATE|VALUE|IN|BY|SQLAWARN|SQLERRM|SQLERROR|SQLERRP|SQLSTATE|SQLWARNING)\\b",
       "name":"keyword.other"
+    },
+    {
+      "comment": "SPSQL",
+      "match": "\\b(PROCEDURE|VARCHAR)\\b",
+      "name": "keyword.other"
     },
     {
       "comment": "Definicion de Funciones",
