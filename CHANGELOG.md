@@ -7,6 +7,10 @@ Cambios y Actualizaciones.
 - Mas resaltadores de sintaxis
 - Mas Snippets
 
+## [0.0.6] - 2018-04-24
+### Agregado
+- Se unifican los colores de resaltado
+
 ## [0.0.5] - 2018-02-05
 ### Agregado
 - Se agregan snippets case y se modifica function
