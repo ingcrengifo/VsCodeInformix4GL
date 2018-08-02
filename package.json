@@ -5,6 +5,10 @@
     "icon": "images/logo.jpg",
     "version": "0.0.6",
     "publisher": "CristianRengifo",
+    "author": {
+        "name": "Cristian Danilo Rengifo Parra",
+        "email": "ingcrengifo@gmail.com"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/INGCRENGIFO/VsCodeInformix4GL"
@@ -24,7 +28,7 @@
     "contributes": {
         "languages": [{
             "id": "4GL",
-            "aliases": ["Informix 4GL", "4GL"],
+            "aliases": ["Informix 4GL", "4GL", "4gl"],
             "extensions": [".4gl",".per",".spsql"],
             "configuration": "./language-configuration.json"
         }],
@@ -41,7 +45,8 @@
         ],
         "configurationDefaults": {
             "[4GL]": {
-                "files.encoding": "cp437"
+                "files.encoding": "cp437",
+                "files.insertFinalNewline": true
             }
         }
     }
