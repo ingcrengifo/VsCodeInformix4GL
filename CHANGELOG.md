@@ -4,8 +4,10 @@ Cambios y Actualizaciones.
 ## [Pendientes]
 - Formateador
 - Iconos .4gl y .per
-- Mas resaltadores de sintaxis
-- Mas Snippets
+
+## [0.0.7] - 2018-08-06
+### Agregado
+- Se agregan mas snippets
 
 ## [0.0.6] - 2018-04-24
 ### Agregado

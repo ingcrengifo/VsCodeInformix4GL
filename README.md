@@ -4,22 +4,19 @@ Esta es la Sintaxis para usar Informix 4GL en Vs Code.
 
 ## Caracteristicas
 
-Resaltado de sintaxis para Informix 4GL
+* Resaltado de sintaxis para Informix 4GL (Syntax highlighting)
+* Snippets
 
 Ejemplo de la Sintaxis:
 
 ![Sintaxis](https://github.com/INGCRENGIFO/VsCodeInformix4GL/blob/master/images/4gl.png?raw=true)
 
 
-> Resaltado Final.
+> Resultado Final.
 
 ## Requisitos
 
-Actualmente no hay requisitos o dependencias, pero pienso integrar un gestor de FTP para trabajar directamente desde el servidor.
-
-## problemas Conocidos
-
-Los operadores no se resaltan.
+Ninguno
 
 
 # Snippets
@@ -35,21 +32,27 @@ Escriba parte de un snippet, presione `enter`, y el snippet se desplegará.
 | Snippet                      | Purpose                    |
 |------------------------------|----------------------------|
 | `select`                     | Genera la estructura para un Select |
+| `select into`                | Genera la estructura para un Select guardando los resultados en variables |
+| `insert`                     | Genera la estructura para un Insert |
 | `update`                     | Genera la estructura para un Update |
+| `delete`                     | Genera la estructura para un Delete |
 | `if`                         | Genera la estructura para un If |
 | `for`                        | Genera la estructura para un For |
 | `foreach`                    | Genera la estructura para un Foreach |
-| `cursor`                     | Genera la Estructura para un Cursor con un Select y su iteracion con un Foreach |
-| `function`                   | Genera la estructura para una Funcion |
+| `cursor`                     | Genera la Estructura para un Cursor con un Select y su iteración con un Foreach |
+| `function`                   | Genera la estructura para una Función |
 | `report`                     | Genera la estructura para un Reporte |
 | `call`                       | Genera la estructura para un llamado a una funcion |
 | `message`                    | Genera la estructura para un mensaje |
 | `case`                       | Genera la estructura para un case |
+| `seccion`                    | Genera la estructura para un separador con una breve descripción |
+| `record`                     | Genera la estructura para un record like |
+| `recordvar`                  | Genera la estructura para un record con su propia estructura |
 
 
 Alternativamente, presione `Ctrl` +` Space` (Windows, Linux) o `Cmd` +` Space` (OSX) para activar los snippets desde el editor.
 
-## Instalacion
+# Instalacion
 
 1. Instale Visual Studio Code (Ultimo Release)
 1. Inicie Code
@@ -57,6 +60,5 @@ Alternativamente, presione `Ctrl` +` Space` (Windows, Linux) o `Cmd` +` Space` (
 1. Seleccione `Install Extension`
 1. Elija la extension
 1. Reinicie Visual Studio Code
-
 
 -----------------------------------------------------------------------------------------------------------
