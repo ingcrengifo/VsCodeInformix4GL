@@ -5,6 +5,10 @@ Cambios y Actualizaciones.
 - Formateador
 - Iconos .4gl y .per
 
+## [0.0.8] - 2018-09-24
+### Corrección
+- Se corrige el snippet if
+
 ## [0.0.7] - 2018-08-06
 ### Agregado
 - Se agregan mas snippets
