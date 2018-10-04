@@ -61,8 +61,8 @@
     "If": {
         "prefix": "if",
         "body": [
-            "IF ${0:condicion} THEN",
-            "\t${1:#validacion}",
+            "IF ${1:condicion} THEN",
+            "\t${0:#validacion}",
             "END IF\n"
         ],
         "description": "Condicional If"
