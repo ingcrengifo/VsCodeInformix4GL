@@ -5,6 +5,10 @@ Cambios y Actualizaciones.
 - Formateador
 - Iconos .4gl y .per
 
+## [0.0.9] - 2018-11-22
+### Agregado
+- Se agregan palabras reservadas
+
 ## [0.0.8] - 2018-09-24
 ### Corrección
 - Se corrige el snippet if
