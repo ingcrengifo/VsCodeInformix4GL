@@ -5,6 +5,10 @@ Cambios y Actualizaciones.
 - Formateador
 - Iconos .4gl y .per
 
+## [0.0.10] - 2019-08-04
+### Agregado
+- Se agregan snippets
+
 ## [0.0.9] - 2018-11-22
 ### Agregado
 - Se agregan palabras reservadas

@@ -58,6 +58,29 @@
         ],
         "description": "Delete con validación de error"
     },
+    "alter": {
+        "prefix": "alter",
+        "body": [
+            "ALTER TABLE ${1:tabla}",
+            "\n"
+        ],
+        "description": "Realiza un alter sobre la tabla"
+    },
+    "encabezado": {
+        "prefix": "encabezado",
+        "body": [
+            "###############################################################################",
+            "# PROGRAMA: $TM_FILENAME",
+            "# CREADO  : $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR, $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            "# VERSION : ${1:version}",
+            "# AUTOR   : ${2:autor}",
+            "# OBJETIVO: ${3:objetivo}",            
+            "# DEPENDENCIAS: ",
+            "#\t\t${4:dependencias}",
+            "###############################################################################"
+        ],
+        "description": "Encabezado para programas 4gl"
+    },
     "If": {
         "prefix": "if",
         "body": [
@@ -194,11 +217,12 @@
         "description": "char"
     },
     "seccion": {
-        "prefix": "sección",
+        "prefix": "seccion",
         "body": [
             "############################################################",
-            "# ${0:Descripción}",
-            "############################################################\n"
+            "# ${1:Descripción}",
+            "############################################################\n",
+            "${2:}"
         ],
         "description": "Sección con Comentario"
     },
@@ -218,5 +242,58 @@
             "END RECORD\n"
         ],
         "description": "Record estructurado"
+    },
+    "error": {
+        "prefix": "error",
+        "body": [
+            "ERROR \"${1:mensaje}\"",
+            "SLEEP ${2:sleep}"
+        ],
+        "description": "Mostrar error con sleep"
+    },
+    "display": {
+        "prefix": "display",
+        "body": [
+            "DISPLAY \"${1:valor}\"",
+            "SLEEP ${2:sleep}"
+        ],
+        "description": "Mostrar display con sleep"
+    },
+    "displaybyname": {
+        "prefix": "displaybyname",
+        "body": [
+            "DISPLAY BY NAME ${1:valor}"
+        ],
+        "description": "Display by name"
+    },
+    "prepared": {
+        "prefix": "prepared",
+        "body": [
+            "PREPARE ${1:prep} FROM ${2:sql_var}",
+            "DECLARE ${3:curs} CURSOR FOR ${1:prep}",
+            "OPEN    ${3:curs}",
+            "INITIALIZE ${4:record}.* TO NULL",
+            "FETCH ${3:curs} INTO ${4:record}.*",
+            "CLOSE ${3:curs}",
+            "FREE  ${3:curs}",
+            "\n"
+        ],
+        "description": "Genera un prepared statment y lo descarga al record elegido, previamente debe tener definida una variable para soportar el SQL "
+    },
+    "preparedForeach": {
+        "prefix": "preparedForeach",
+        "body": [
+            "PREPARE ${1:prep} FROM ${2:sql_var}",
+            "DECLARE ${3:curs} CURSOR FOR ${1:prep}",
+            "OPEN    ${3:curs}",
+            "\tINITIALIZE ${4:record}.* TO NULL",
+            "\tFOREACH ${3:curs} INTO ${4:record}",
+            "\t\t${5:}",
+            "\tEND FOREACH",
+            "CLOSE ${3:curs}",
+            "FREE  ${3:curs}",
+            "\n"
+        ],
+        "description": "Genera un prepared statment y lo usa directamente en un foreach, previamente debe tener definida una variable para soportar el SQL "
     }
 }
