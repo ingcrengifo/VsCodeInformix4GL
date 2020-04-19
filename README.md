@@ -8,17 +8,12 @@ El objetivo de esta extension es mejorar la agilidad del desarrollador en Inform
 
 * Resaltado de sintaxis para Informix 4GL (Syntax highlighting)
 * Snippets
-
-Ejemplo de la Sintaxis:
-
-![Sintaxis](https://github.com/INGCRENGIFO/VsCodeInformix4GL/blob/master/images/4gl.png?raw=true)
-
-
-> Resultado Final.
+* Se muestra el esquema
 
 ## Requisitos
 
 * Visual Studio Code 1.20 o Superior
+
 
 # Snippets
 
@@ -85,3 +80,12 @@ Cualquier error lo puedes reportar en: https://github.com/INGCRENGIFO/VsCodeInfo
 Puedes enviarme un correo a ingcrengifo@gmail.com
 
 -----------------------------------------------------------------------------------------------------------
+
+Ejemplo de la Sintaxis:
+
+![Sintaxis](https://github.com/INGCRENGIFO/VsCodeInformix4GL/blob/master/images/4gl.png?raw=true)
+
+Ejemplo de Esquema:
+![Sintaxis](https://github.com/INGCRENGIFO/VsCodeInformix4GL/blob/master/images/esquema.png?raw=true)
+
+> Resultado Final.

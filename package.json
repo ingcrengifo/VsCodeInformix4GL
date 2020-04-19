@@ -1,57 +1,87 @@
 {
-    "name": "informix4gl",
-    "displayName": "Informix 4GL",
-    "description": "Sintaxis para Informix 4GL en Vs Code",
-    "icon": "images/logo.jpg",
-    "version": "0.0.10",
-    "publisher": "CristianRengifo",
-    "author": {
-        "name": "Cristian Danilo Rengifo Parra",
-        "email": "ingcrengifo@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/INGCRENGIFO/VsCodeInformix4GL"
-    },
-    "keywords": [
-        "Informix",
-        "Informix 4GL",
-        "4GL"
-    ],
-    "engines": {
-        "vscode": "^1.18.0"
-    },
-    "categories": [
-        "Languages",
-        "Snippets"
-    ],
-    "contributes": {
-        "languages": [{
-            "id": "4GL",
-            "aliases": ["Informix 4GL", "4GL", "4gl"],
-            "extensions": [".4gl",".per",".spsql"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "4GL",
-            "scopeName": "source.4GL",
-            "path": "./syntaxes/4GL.tmLanguage.json"
-        }],
-        "snippets": [
-            {
-                "language": "4GL",
-                "path": "./snippets/snippets.json"
-            }
+  "name": "informix4gl",
+  "displayName": "Informix 4GL",
+  "description": "Sintaxis para Informix 4GL en Vs Code",
+  "icon": "images/logo.jpg",
+  "version": "0.0.11",
+  "publisher": "CristianRengifo",
+  "author": {
+    "name": "Cristian Danilo Rengifo Parra",
+    "email": "ingcrengifo@gmail.com"
+  },
+  "homepage": "https://github.com/INGCRENGIFO/VsCodeInformix4GL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/INGCRENGIFO/VsCodeInformix4GL"
+  },
+  "keywords": [
+    "Informix",
+    "Informix 4GL",
+    "4GL"
+  ],
+  "engines": {
+    "vscode": "^1.18.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Keymaps",
+    "Snippets",
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:4GL"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "4GL",
+        "aliases": [
+          "Informix 4GL",
+          "4GL",
+          "4gl"
         ],
-        "configurationDefaults": {
-            "[4GL]": {
-                "files.encoding": "cp437",
-                "files.insertFinalNewline": true
-            },
-            "[per]": {
-                "files.encoding": "cp437",
-                "files.insertFinalNewline": true
-            }
-        }
+        "extensions": [
+          ".4gl",
+          ".per",
+          ".spsql"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "4GL",
+        "scopeName": "source.4GL",
+        "path": "./syntaxes/4GL.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "4GL",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[4GL]": {
+        "files.encoding": "cp437",
+        "files.insertFinalNewline": true
+      },
+      "[per]": {
+        "files.encoding": "cp437",
+        "files.insertFinalNewline": true
+      }
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.44.0",
+    "typescript": "^3.8.3",
+    "vscode-test": "^1.3.0"
+  }
 }

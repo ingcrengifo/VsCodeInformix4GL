@@ -3,7 +3,10 @@ Cambios y Actualizaciones.
 
 ## [Pendientes]
 - Formateador
-- Iconos .4gl y .per
+
+## [0.0.11] - 2020-04-18
+### Agregado
+- Se agrega soporte para esquema
 
 ## [0.0.10] - 2019-08-04
 ### Agregado

@@ -26,5 +26,12 @@
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
-    ]
+    ],
+    "folding": {
+        "offSide": true,
+        "markers": {
+            "start": "(^\\s*FUNCTION\\b|^\\s*MAIN\\b|^\\s*#\\s*region\\b)",
+            "end": "(^\\s*END\\s*FUNCTION\\b|^\\s*END\\s*MAIN\\b|^\\s*#\\s*endregion\\b)"
+        }
+    }
 }
