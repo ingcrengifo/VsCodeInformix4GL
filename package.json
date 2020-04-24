@@ -3,7 +3,7 @@
   "displayName": "Informix 4GL",
   "description": "Sintaxis para Informix 4GL en Vs Code",
   "icon": "images/logo.jpg",
-  "version": "0.0.11",
+  "version": "0.12.0",
   "publisher": "CristianRengifo",
   "author": {
     "name": "Cristian Danilo Rengifo Parra",
@@ -20,7 +20,7 @@
     "4GL"
   ],
   "engines": {
-    "vscode": "^1.18.0"
+    "vscode": "^1.44.0"
   },
   "categories": [
     "Programming Languages",

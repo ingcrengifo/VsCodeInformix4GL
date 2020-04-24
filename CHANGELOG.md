@@ -1,8 +1,13 @@
 # Registro de Cambios
 Cambios y Actualizaciones.
 
-## [Pendientes]
-- Formateador
+
+## [0.12.0] - 2020-04-24
+### Corregido
+- Expresion regular para visualizacion de esquema
+
+### Agregado
+- Se muestran los reportes en el esquema
 
 ## [0.0.11] - 2020-04-18
 ### Agregado

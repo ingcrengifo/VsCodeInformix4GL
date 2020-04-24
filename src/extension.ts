@@ -14,8 +14,18 @@ export function activate(context: vscode.ExtensionContext) {
 
 class SwmfConfigDocumentSymbolProvider
   implements vscode.DocumentSymbolProvider {
-  private format(cmd: string): string {
-    return cmd.replace(/\(.*/, "");
+  private formatFunc(cmd: string): string {
+    return cmd
+      .replace(/^ *function /i, "")
+      .replace(/\(.*/, "")
+      .trim();
+  }
+
+  private formatRep(cmd: string): string {
+    return cmd
+      .replace(/^ *report /i, "")
+      .replace(/\(.*/, "")
+      .trim();
   }
 
   public provideDocumentSymbols(
@@ -32,12 +42,20 @@ class SwmfConfigDocumentSymbolProvider
       for (var i = 0; i < document.lineCount; i++) {
         var line = document.lineAt(i);
 
-        let tokens = line.text.split(" ");
-
         if (line.text.match(/^ *function /i)) {
           let marker_symbol = new vscode.DocumentSymbol(
-            this.format(tokens[1]),
+            this.formatFunc(line.text),
             "",
+            func,
+            line.range,
+            line.range
+          );
+
+          nodes[nodes.length - 1].push(marker_symbol);
+        } else if (line.text.match(/^ *report /i)) {
+          let marker_symbol = new vscode.DocumentSymbol(
+            this.formatRep(line.text),
+            "Report",
             func,
             line.range,
             line.range
@@ -46,7 +64,7 @@ class SwmfConfigDocumentSymbolProvider
           nodes[nodes.length - 1].push(marker_symbol);
         } else if (line.text.startsWith("MAIN")) {
           let marker_symbol = new vscode.DocumentSymbol(
-            tokens[0],
+            "MAIN",
             "MAIN statement",
             func,
             line.range,
@@ -56,7 +74,7 @@ class SwmfConfigDocumentSymbolProvider
           nodes[nodes.length - 1].push(marker_symbol);
         } else if (line.text.startsWith("GLOBALS")) {
           let marker_symbol = new vscode.DocumentSymbol(
-            tokens[0],
+            "GLOBALS",
             "",
             key,
             line.range,
@@ -66,6 +84,7 @@ class SwmfConfigDocumentSymbolProvider
           nodes[nodes.length - 1].push(marker_symbol);
         }
       }
+
       resolve(symbols);
     });
   }

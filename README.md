@@ -86,6 +86,7 @@ Ejemplo de la Sintaxis:
 ![Sintaxis](https://github.com/INGCRENGIFO/VsCodeInformix4GL/blob/master/images/4gl.png?raw=true)
 
 Ejemplo de Esquema:
+
 ![Sintaxis](https://github.com/INGCRENGIFO/VsCodeInformix4GL/blob/master/images/esquema.png?raw=true)
 
 > Resultado Final.
